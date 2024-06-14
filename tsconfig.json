@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"esModuleInterop": true,
+		"isolatedModules": true,
+		"lib": [
+			"ES2022",
+			"dom"
+		],
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"outDir": "dist",
+		"rootDir": ".",
+		"target": "ES2022",
+	},
+	"exclude": [
+		"node_modules",
+		"dist"
+	]
+}

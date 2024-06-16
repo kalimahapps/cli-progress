@@ -47,7 +47,7 @@ const createProgressBar = (prefix?: string): SingleBar => {
 	bar.on('stop', () => {
 		const endTime = performance.now();
 		const formattedTime = formatTime(endTime - startTime);
-		console.log(` ${colors.black.bgGreenBright(` ${formattedTime} `)}`);
+		process.stdout.write(`  ${colors.black.bgGreenBright(` ${formattedTime} `)}`);
 	});
 	bar.start(100, 0);
 

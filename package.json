@@ -2,11 +2,11 @@
 	"name": "@kalimahapps/cli-progress",
 	"description": "cli-progress wrapper with personal configuration",
 	"author": "khr2003",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"type": "module",
 	"license": "MIT",
 	"scripts": {
-		"compile": "tsc -p ./",
+		"compile": "tsc -p tsconfig.json --listEmittedFiles",
 		"watch": "tsc -watch -p ./"
 	},
 	"dependencies": {

@@ -22,11 +22,24 @@ const formatBar = function (progress: number, options: Options) {
 };
 
 const formatTime = function (time: number) {
-	const seconds = Math.round(time / 1000);
-	const minutes = Math.floor(seconds / 60);
-	const remainingSeconds = seconds % 60;
-	const timeValues = [minutes, remainingSeconds].filter(Boolean);
-	return `${timeValues.join('m ')}s`;
+	const milliseconds = Math.floor(time % 1000);
+	const seconds = Math.floor((time / 1000) % 60);
+	const minutes = Math.floor((time / (1000 * 60)) % 60);
+
+	const timeArray = [];
+	if (minutes > 0) {
+		timeArray.push(`${minutes}m`);
+	}
+
+	if (seconds > 0) {
+		timeArray.push(`${seconds}s`);
+	}
+
+	if (seconds === 0) {
+		timeArray.push(`0.${milliseconds}ms`);
+	}
+
+	return timeArray.join(' ');
 };
 
 const createHeader = (text: string) => {
